@@ -906,3 +906,16 @@ transparent 52%);
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 480px) {
+    .planets-grid {
+        grid-template-columns: 1fr;
+        /* Force single column on small phones */
+        gap: 20px;
+    }
+
+    .planet-card {
+        padding: 20px;
+        /* Reduce padding to save space */
+    }
+}
