@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Explorer - ZOOM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="planetdetail.css">
+</head>
+
+<body>
+    <div class="stars"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-satellite"></i>
+                <span>ZOOM</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="explore.html" class="nav-link">Explore</a>
+                <a href="missions.html" class="nav-link">Missions</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-nav" id="loginBtn">Login</button>
+                <button class="btn-nav-primary" id="registerNavBtn">Register</button>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="planet-hero" id="planetHero">
+        <div class="hero-background">
+            <div class="planet-hero-visual" id="heroVisual"></div>
+        </div>
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <a href="explore.html">Explore</a>
+                <span>/</span>
+                <span id="heroPlanetName">Mercury</span>
+            </div>
+            <div class="hero-title">
+                <span class="hero-number" id="heroNumber">01</span>
+                <h1 id="heroTitle">Mercury</h1>
+            </div>
+            <p class="hero-subtitle" id="heroSubtitle">The Swift Planet</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="planet-content">
+        <div class="container">
+            <!-- Quick Stats -->
+            <div class="quick-stats">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-map-pin"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-label">Distance from Sun</span>
+                        <span class="stat-value" id="statDistance">57.9M km</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-circle"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-label">Diameter</span>
+                        <span class="stat-value" id="statDiameter">4,879 km</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-sync-alt"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-label">Orbit Period</span>
+                        <span class="stat-value" id="statOrbit">88 days</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-thermometer-half"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-label">Temperature</span>
+                        <span class="stat-value" id="statTemp">-173°C to 427°C</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overview Section -->
+            <div class="content-grid">
+                <div class="content-left">
+                    <div class="section-card">
+                        <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                        <p id="overviewText"></p>
+                    </div>
+                    <br>
+                    <div class="section-card">
+                        <h2><i class="fas fa-list"></i> Key Features</h2>
+                        <ul class="features-list" id="featuresList">
+                            <li>Loading features...</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-right">
+                    <div class="section-card highlight-card">
+                        <h2><i class="fas fa-graduation-cap"></i> Key Facts</h2>
+                        <div class="facts-grid" id="factsGrid">
+                            <div class="fact-item">
+                                <span class="fact-icon">✓</span>
+                                <span class="fact-text">Loading facts...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Information -->
+            <div class="detailed-section">
+                <h2><i class="fas fa-telescope"></i> Detailed Information</h2>
+                <div class="info-boxes">
+                    <div class="info-box">
+                        <h3><i class="fas fa-wind"></i> Atmosphere</h3>
+                        <p id="infoAtmosphere">Information loading...</p>
+                    </div>
+                    <div class="info-box">
+                        <h3><i class="fas fa-mountain"></i> Surface & Geography</h3>
+                        <p id="infoSurface">Information loading...</p>
+                    </div>
+                    <div class="info-box">
+                        <h3><i class="fas fa-rocket"></i> Exploration Status</h3>
+                        <p id="infoExploration">Information loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison -->
+            <div class="comparison-section">
+                <h2><i class="fas fa-exchange-alt"></i> Comparison with Earth</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <span class="comparison-label">Size</span>
+                        <div class="comparison-bar">
+                            <div class="comparison-fill" id="compSize" style="width: 40%"></div>
+                        </div>
+                        <span class="comparison-text" id="compSizeText">40% of Earth</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Distance from Sun</span>
+                        <div class="comparison-bar">
+                            <div class="comparison-fill" id="compDistance" style="width: 39%"></div>
+                        </div>
+                        <span class="comparison-text" id="compDistanceText">39% of Earth's distance</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Gravity</span>
+                        <div class="comparison-bar">
+                            <div class="comparison-fill" id="compGravity" style="width: 38%"></div>
+                        </div>
+                        <span class="comparison-text" id="compGravityText">38% of Earth's gravity</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <h2>Ready for More Exploration?</h2>
+                <div class="cta-buttons">
+                    <a href="explore.html" class="btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Explore
+                    </a>
+                    <button class="btn-primary" id="startMissionBtn">
+                        <i class="fas fa-rocket"></i> Start Virtual Mission
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-satellite"></i>
+                        <span>ZOOM</span>
+                    </div>
+                    <p>Exploring the universe, one planet at a time.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="missions.html">Missions</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">API</a>
+                    <a href="#">Research</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for cosmic updates</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ZOOM Space Exploration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="planetdetail.js"></script>
+</body>
+
+</html>

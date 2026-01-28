@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOOM - Space Exploration Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <div class="stars"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-satellite"></i>
+                <span>ZOOM</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="explore.html" class="nav-link">Explore</a>
+                <a href="missions.html" class="nav-link">Missions</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-nav" id="loginBtn">Login</button>
+                <button class="btn-nav-primary" id="registerNavBtn">Register</button>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">01</div>
+            <h1 class="hero-title">Explore The <span class="highlight">Universe</span></h1>
+            <p class="hero-subtitle">Journey through the cosmos and discover the wonders of our solar system</p>
+            <div class="hero-buttons">
+                <button class="btn-hero-primary" id="heroExploreBtn">
+                    <span>Begin Exploration</span>
+                    <i class="fas fa-rocket"></i>
+                </button>
+                <button class="btn-hero-secondary">
+                    <span>Watch Video</span>
+                    <i class="fas fa-play"></i>
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Planets</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">200+</div>
+                    <div class="stat-label">Moons</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">1M+</div>
+                    <div class="stat-label">Asteroids</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-planet">
+            <div class="planet-main"></div>
+            <div class="planet-ring"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-satellite"></i>
+                        <span>ZOOM</span>
+                    </div>
+                    <p>Exploring the universe, one planet at a time.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="missions.html">Missions</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">API</a>
+                    <a href="#">Research</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for cosmic updates</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ZOOM Space Exploration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeLogin"><i class="fas fa-times"></i></button>
+            <div class="planet-decoration">
+                <div class="planet earth"></div>
+                <div class="orbit-ring"></div>
+            </div>
+
+            <div class="form-header">
+                <div class="number-badge">01</div>
+                <h1 class="planet-title">Earth</h1>
+                <p class="planet-subtitle">The Blue Planet</p>
+            </div>
+
+            <form class="auth-form" id="loginFormElement">
+                <h2>Access Portal</h2>
+                <div class="form-divider"></div>
+
+                <div class="input-group">
+                    <label for="loginEmail">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Remember coordinates
+                    </label>
+                    <a href="#" class="link-text">Reset access</a>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    <span>Initialize Mission</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <div class="switch-section">
+                    <p class="switch-text">New explorer?</p>
+                    <a href="#" id="switchToRegister" class="link-text">Register Account <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </form>
+
+            <div class="tech-corner top-left"></div>
+            <div class="tech-corner top-right"></div>
+            <div class="tech-corner bottom-left"></div>
+            <div class="tech-corner bottom-right"></div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeRegister"><i class="fas fa-times"></i></button>
+            <div class="planet-decoration">
+                <div class="planet mars"></div>
+                <div class="orbit-ring"></div>
+            </div>
+
+            <div class="form-header">
+                <div class="number-badge">04</div>
+                <h1 class="planet-title mars-color">Mars</h1>
+                <p class="planet-subtitle">The Red Planet</p>
+            </div>
+
+            <form class="auth-form" id="registerFormElement">
+                <h2>Create Account</h2>
+                <div class="form-divider"></div>
+
+                <div class="input-group">
+                    <label for="registerName">Full Name</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="registerName" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerEmail">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerPassword">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="registerPassword" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="registerConfirmPassword" required>
+                    </div>
+                </div>
+
+                <label class="checkbox-container terms">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    I agree to the <a href="#" class="link-text">Terms & Conditions</a>
+                </label>
+
+                <button type="submit" class="btn-primary mars-btn">
+                    <span>Begin Exploration</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <div class="switch-section">
+                    <p class="switch-text">Already registered?</p>
+                    <a href="#" id="switchToLogin" class="link-text">Access Portal <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </form>
+
+            <div class="tech-corner top-left"></div>
+            <div class="tech-corner top-right"></div>
+            <div class="tech-corner bottom-left"></div>
+            <div class="tech-corner bottom-right"></div>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="home.js"></script>
+</body>
+
+</html>

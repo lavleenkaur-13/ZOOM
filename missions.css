@@ -1,0 +1,84 @@
+.missions-section {
+    background: var(--bg-card);
+}
+
+.missions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.mission-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--earth-blue);
+}
+
+.mission-status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mission-status.active {
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid #22c55e;
+    color: #22c55e;
+}
+
+.mission-status.planned {
+    background: rgba(251, 191, 36, 0.2);
+    border: 1px solid #fbbf24;
+    color: #fbbf24;
+}
+
+.mission-icon {
+    font-size: 48px;
+    color: var(--earth-blue);
+    margin-bottom: 20px;
+}
+
+.mission-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.mission-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.mission-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+@media (max-width: 968px) {
+    .missions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 540px) {
+    .missions-grid {
+        grid-template-columns: 1fr;
+    }
+}

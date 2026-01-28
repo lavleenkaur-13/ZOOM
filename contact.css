@@ -1,0 +1,122 @@
+.contact-section {
+    padding: 100px 20px;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-item {
+    display: flex;
+    gap: 20px;
+}
+
+.info-item i {
+    font-size: 24px;
+    color: var(--earth-blue);
+    margin-top: 4px;
+}
+
+.info-item h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.info-item p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.contact-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 40px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-form .input-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 15px;
+    font-family: 'Rajdhani', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--earth-blue);
+    background: rgba(74, 144, 226, 0.05);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--earth-blue);
+    border: 1px solid var(--earth-blue);
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #6bb6ff;
+    border-color: #6bb6ff;
+}
+
+@media (max-width: 968px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 540px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

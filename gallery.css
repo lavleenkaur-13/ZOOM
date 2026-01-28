@@ -1,0 +1,77 @@
+/* Gallery Section */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Image URLs*/
+.gallery-image.nebula {
+    background-image: url('nebula.jpg');
+}
+
+.gallery-image.galaxy {
+    background-image: url('galaxy.jpg');
+}
+
+.gallery-image.blackhole {
+    background-image: url('blackhole.jpg');
+}
+
+.gallery-image.aurora {
+    background-image: url('aurora.jpg');
+}
+
+.gallery-image.supernova {
+    background-image: url('supernova.jpg');
+}
+
+.gallery-image.pulsar {
+    background-image: url('pulsar.jpg');
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 20px;
+    background: linear-gradient(to top, rgba(10, 10, 15, 0.95), transparent);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.gallery-overlay p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
