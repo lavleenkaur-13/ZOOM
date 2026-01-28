@@ -14,6 +14,7 @@
     <div class="stars"></div>
     <div class="grid-overlay"></div>
 
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -28,12 +29,17 @@
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
+            <div class="nav-actions">
+                <button class="btn-nav" id="loginBtn">Login</button>
+                <button class="btn-nav-primary" id="registerNavBtn">Register</button>
+            </div>
             <div class="nav-toggle" id="navToggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
+    <!-- Explore Planets Section -->
     <section class="explore-section">
         <div class="container">
             <div class="section-header">
@@ -43,7 +49,7 @@
             </div>
 
             <div class="planets-grid">
-
+                <!-- Mercury -->
                 <div class="planet-card" data-planet="mercury">
                     <div class="planet-image mercury"></div>
                     <div class="planet-info">
@@ -63,10 +69,161 @@
                         <button class="btn-explore">Explore <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
+
+                <!-- Venus -->
+                <div class="planet-card" data-planet="venus">
+                    <div class="planet-image venus"></div>
+                    <div class="planet-info">
+                        <div class="planet-number">02</div>
+                        <h3 class="planet-name">Venus</h3>
+                        <p class="planet-tagline">The Morning Star</p>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-label">Distance</span>
+                                <span class="stat-value">108.2M km</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Diameter</span>
+                                <span class="stat-value">12,104 km</span>
+                            </div>
+                        </div>
+                        <button class="btn-explore">Explore <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Earth -->
+                <div class="planet-card featured" data-planet="earth">
+                    <div class="featured-badge">Our Home</div>
+                    <div class="planet-image earth"></div>
+                    <div class="planet-info">
+                        <div class="planet-number">03</div>
+                        <h3 class="planet-name">Earth</h3>
+                        <p class="planet-tagline">The Blue Planet</p>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-label">Distance</span>
+                                <span class="stat-value">150.0M km</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Diameter</span>
+                                <span class="stat-value">12,742 km</span>
+                            </div>
+                        </div>
+                        <button class="btn-explore">Explore <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Mars -->
+                <div class="planet-card" data-planet="mars">
+                    <div class="planet-image mars"></div>
+                    <div class="planet-info">
+                        <div class="planet-number">04</div>
+                        <h3 class="planet-name">Mars</h3>
+                        <p class="planet-tagline">The Red Planet</p>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-label">Distance</span>
+                                <span class="stat-value">227.9M km</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Diameter</span>
+                                <span class="stat-value">6,779 km</span>
+                            </div>
+                        </div>
+                        <button class="btn-explore">Explore <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Jupiter -->
+                <div class="planet-card" data-planet="jupiter">
+                    <div class="planet-image jupiter"></div>
+                    <div class="planet-info">
+                        <div class="planet-number">05</div>
+                        <h3 class="planet-name">Jupiter</h3>
+                        <p class="planet-tagline">The Gas Giant</p>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-label">Distance</span>
+                                <span class="stat-value">778.5M km</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Diameter</span>
+                                <span class="stat-value">139,820 km</span>
+                            </div>
+                        </div>
+                        <button class="btn-explore">Explore <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Saturn -->
+                <div class="planet-card" data-planet="saturn">
+                    <div class="planet-image saturn"></div>
+                    <div class="planet-info">
+                        <div class="planet-number">06</div>
+                        <h3 class="planet-name">Saturn</h3>
+                        <p class="planet-tagline">The Ringed Planet</p>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-label">Distance</span>
+                                <span class="stat-value">1.4B km</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Diameter</span>
+                                <span class="stat-value">116,460 km</span>
+                            </div>
+                        </div>
+                        <button class="btn-explore">Explore <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Uranus -->
+                <div class="planet-card" data-planet="uranus">
+                    <div class="planet-image uranus"></div>
+                    <div class="planet-info">
+                        <div class="planet-number">07</div>
+                        <h3 class="planet-name">Uranus</h3>
+                        <p class="planet-tagline">The Ice Giant</p>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-label">Distance</span>
+                                <span class="stat-value">2.9B km</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Diameter</span>
+                                <span class="stat-value">50,724 km</span>
+                            </div>
+                        </div>
+                        <button class="btn-explore">Explore <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Neptune -->
+                <div class="planet-card" data-planet="neptune">
+                    <div class="planet-image neptune"></div>
+                    <div class="planet-info">
+                        <div class="planet-number">08</div>
+                        <h3 class="planet-name">Neptune</h3>
+                        <p class="planet-tagline">The Distant Blue</p>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-label">Distance</span>
+                                <span class="stat-value">4.5B km</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Diameter</span>
+                                <span class="stat-value">49,244 km</span>
+                            </div>
+                        </div>
+                        <button class="btn-explore">Explore <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
+
+
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -90,12 +247,166 @@
                     <a href="missions.html">Missions</a>
                     <a href="gallery.html">Gallery</a>
                 </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">API</a>
+                    <a href="#">Research</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for cosmic updates</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 ZOOM Space Exploration. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeLogin"><i class="fas fa-times"></i></button>
+            <div class="planet-decoration">
+                <div class="planet earth"></div>
+                <div class="orbit-ring"></div>
+            </div>
+
+            <div class="form-header">
+                <div class="number-badge">01</div>
+                <h1 class="planet-title">Earth</h1>
+                <p class="planet-subtitle">The Blue Planet</p>
+            </div>
+
+            <form class="auth-form" id="loginFormElement">
+                <h2>Access Portal</h2>
+                <div class="form-divider"></div>
+
+                <div class="input-group">
+                    <label for="loginEmail">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Remember coordinates
+                    </label>
+                    <a href="#" class="link-text">Reset access</a>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    <span>Initialize Mission</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <div class="switch-section">
+                    <p class="switch-text">New explorer?</p>
+                    <a href="#" id="switchToRegister" class="link-text">Register Account <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </form>
+
+            <div class="tech-corner top-left"></div>
+            <div class="tech-corner top-right"></div>
+            <div class="tech-corner bottom-left"></div>
+            <div class="tech-corner bottom-right"></div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeRegister"><i class="fas fa-times"></i></button>
+            <div class="planet-decoration">
+                <div class="planet mars"></div>
+                <div class="orbit-ring"></div>
+            </div>
+
+            <div class="form-header">
+                <div class="number-badge">04</div>
+                <h1 class="planet-title mars-color">Mars</h1>
+                <p class="planet-subtitle">The Red Planet</p>
+            </div>
+
+            <form class="auth-form" id="registerFormElement">
+                <h2>Create Account</h2>
+                <div class="form-divider"></div>
+
+                <div class="input-group">
+                    <label for="registerName">Full Name</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="registerName" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerEmail">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerPassword">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="registerPassword" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="registerConfirmPassword" required>
+                    </div>
+                </div>
+
+                <label class="checkbox-container terms">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    I agree to the <a href="#" class="link-text">Terms & Conditions</a>
+                </label>
+
+                <button type="submit" class="btn-primary mars-btn">
+                    <span>Begin Exploration</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <div class="switch-section">
+                    <p class="switch-text">Already registered?</p>
+                    <a href="#" id="switchToLogin" class="link-text">Access Portal <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </form>
+
+            <div class="tech-corner top-left"></div>
+            <div class="tech-corner top-right"></div>
+            <div class="tech-corner bottom-left"></div>
+            <div class="tech-corner bottom-right"></div>
+        </div>
+    </div>
 
     <script src="common.js"></script>
     <script src="explore.js"></script>

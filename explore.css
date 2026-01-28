@@ -1,76 +1,60 @@
-/* ========================================
-   EXPLORE PAGE - RESPONSIVE FIX
-   ======================================== */
-
-/* Base container settings */
-.explore-section {
-    padding: 120px 20px 60px;
-    min-height: 100vh;
-    box-sizing: border-box;
-}
-
-/* DEFAULT (DESKTOP) LAYOUT 
-   Uses Grid to show multiple cards per row
-*/
+/* Explore Section */
 .planets-grid {
     display: grid;
-    /* This automatically calculates how many columns fit. 
-       If the screen is wide, it shows 3 or 4. 
-       If narrow, it drops to 2 or 1. */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    width: 100%;
-    margin: 0 auto;
 }
 
-/* Card Styling */
 .planet-card {
-    background: rgba(26, 31, 58, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     padding: 30px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
     position: relative;
-    /* Ensure card has a minimum height so it doesn't look crushed */
-    min-height: 400px;
 }
 
 .planet-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     border-color: var(--earth-blue);
-    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
+    box-shadow: 0 10px 40px rgba(74, 144, 226, 0.3);
 }
 
-/* Featured Badge */
+.planet-card.featured {
+    border-color: var(--earth-blue);
+    box-shadow: 0 0 30px rgba(74, 144, 226, 0.2);
+}
+
 .featured-badge {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
+    padding: 4px 12px;
     background: var(--earth-blue);
     color: white;
-    padding: 4px 8px;
-    font-size: 10px;
-    font-weight: bold;
-    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Planet Images */
 .planet-image {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    margin-bottom: 25px;
-    flex-shrink: 0;
-    /* Prevents image from getting squashed */
-    animation: rotate 20s linear infinite;
+    margin: 0 auto 30px;
+    position: relative;
+    animation: planetRotate 20s linear infinite;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
 }
 
-@keyframes rotate {
+.planet-card:hover .planet-image {
+    animation-play-state: paused;
+    transform: scale(1.15) translateZ(20px);
+}
+
+@keyframes planetRotate {
     from {
         transform: rotate(0deg);
     }
@@ -80,118 +64,845 @@
     }
 }
 
-/* Planet Specific Colors (Backgrounds) */
+/* Mercury - Gray rocky planet with deep 3D craters */
 .planet-image.mercury {
-    background: radial-gradient(circle at 30% 30%, #a8a8a8, #4a4a4a);
+    background:
+        radial-gradient(circle at 35% 35%, #d4d4d4, #a8a8a8 30%, #7a7a7a 60%, #4a4a4a);
+    box-shadow:
+        inset -30px -30px 60px rgba(0, 0, 0, 0.7),
+        inset 20px 20px 40px rgba(255, 255, 255, 0.1),
+        0 0 50px rgba(150, 150, 150, 0.4),
+        0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
+.planet-image.mercury::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 25% 30%, rgba(0, 0, 0, 0.5) 2%, transparent 5%),
+        radial-gradient(circle at 60% 45%, rgba(0, 0, 0, 0.4) 3%, transparent 6%),
+        radial-gradient(circle at 40% 70%, rgba(0, 0, 0, 0.45) 4%, transparent 7%),
+        radial-gradient(circle at 75% 65%, rgba(0, 0, 0, 0.4) 2.5%, transparent 5%),
+        radial-gradient(circle at 15% 55%, rgba(0, 0, 0, 0.35) 3%, transparent 6%);
+}
+
+.planet-image.mercury::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 40%);
+}
+
+/* Venus - Thick atmosphere with 3D cloud layers */
 .planet-image.venus {
-    background: radial-gradient(circle at 30% 30%, #ffeaa7, #d4a373);
+    background:
+        radial-gradient(circle at 40% 35%, #fffbeb, #ffeaa7 20%, #f4d29c 40%, #d4a373 70%, #a87e4f);
+    box-shadow:
+        inset -25px -25px 50px rgba(180, 120, 60, 0.6),
+        inset 15px 15px 40px rgba(255, 240, 200, 0.3),
+        0 0 60px rgba(255, 220, 150, 0.6),
+        0 20px 70px rgba(0, 0, 0, 0.5);
+    animation: planetRotate 30s linear infinite reverse;
 }
 
+.planet-image.venus::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        radial-gradient(ellipse at 25% 20%, rgba(255, 255, 255, 0.4) 0%, transparent 35%),
+        radial-gradient(ellipse at 60% 50%, rgba(230, 200, 150, 0.3) 0%, transparent 45%),
+        radial-gradient(ellipse at 40% 70%, rgba(240, 210, 160, 0.25) 0%, transparent 40%);
+    animation: cloudsMove 35s linear infinite;
+}
+
+.planet-image.venus::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+}
+
+/* Earth - Photorealistic with oceans, continents, and clouds */
 .planet-image.earth {
-    background: radial-gradient(circle at 30% 30%, #4a90e2, #0d1b3e);
+    background:
+        radial-gradient(circle at 35% 30%, #a8d8ff, #6bb6ff 20%, #4a90e2 40%, #2d5a8a 65%, #0d1b3e);
+    box-shadow:
+        inset -35px -35px 70px rgba(0, 20, 50, 0.8),
+        inset 25px 25px 50px rgba(150, 200, 255, 0.2),
+        0 0 80px rgba(74, 144, 226, 0.8),
+        0 25px 80px rgba(0, 0, 0, 0.6);
 }
 
+.planet-image.earth::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        radial-gradient(ellipse at 22% 28%, #1a4d2e 0%, #2d5016 8%, transparent 15%),
+        radial-gradient(ellipse at 48% 22%, #2d5016 0%, #3a6b1f 10%, transparent 18%),
+        radial-gradient(ellipse at 68% 30%, #1a4d2e 0%, #2d5016 6%, transparent 12%),
+        radial-gradient(ellipse at 58% 52%, #3a6b1f 0%, #4a7f28 12%, transparent 22%),
+        radial-gradient(ellipse at 28% 62%, #2d5016 0%, #1a4d2e 10%, transparent 18%),
+        radial-gradient(ellipse at 70% 68%, #3a6b1f 0%, #2d5016 9%, transparent 16%),
+        radial-gradient(ellipse at 15% 75%, #1a4d2e 0%, transparent 10%);
+    z-index: 1;
+}
+
+.planet-image.earth::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        radial-gradient(ellipse at 18% 18%, rgba(255, 255, 255, 0.5) 0%, transparent 22%),
+        radial-gradient(ellipse at 62% 32%, rgba(255, 255, 255, 0.35) 0%, transparent 20%),
+        radial-gradient(ellipse at 45% 58%, rgba(255, 255, 255, 0.3) 0%, transparent 18%),
+        radial-gradient(ellipse at 75% 55%, rgba(255, 255, 255, 0.25) 0%, transparent 15%);
+    animation: cloudsMove 45s linear infinite;
+    z-index: 2;
+}
+
+@keyframes cloudsMove {
+    from {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(20px) rotate(5deg);
+    }
+}
+
+/* Mars - Red planet with polar caps and terrain */
 .planet-image.mars {
-    background: radial-gradient(circle at 30% 30%, #ff7851, #8b3a2e);
+    background:
+        radial-gradient(circle at 35% 28%, #ff9d7a, #ff7851 25%, #e74c3c 45%, #c0392b 65%, #8b3a2e 80%, #5a1f1a);
+    box-shadow:
+        inset -30px -30px 60px rgba(80, 20, 10, 0.8),
+        inset 20px 20px 45px rgba(255, 140, 100, 0.2),
+        0 0 70px rgba(231, 76, 60, 0.7),
+        0 22px 70px rgba(0, 0, 0, 0.6);
 }
 
+.planet-image.mars::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 7%, rgba(255, 255, 255, 0.85) 0%, rgba(230, 240, 255, 0.7) 5%, transparent 9%),
+        radial-gradient(circle at 50% 93%, rgba(255, 255, 255, 0.75) 0%, rgba(230, 240, 255, 0.6) 6%, transparent 11%),
+        radial-gradient(ellipse at 58% 38%, rgba(139, 58, 46, 0.7) 0%, rgba(107, 42, 31, 0.5) 8%, transparent 16%),
+        radial-gradient(ellipse at 28% 55%, rgba(107, 42, 31, 0.6) 0%, rgba(80, 30, 20, 0.4) 7%, transparent 14%),
+        radial-gradient(ellipse at 72% 62%, rgba(139, 58, 46, 0.5) 0%, transparent 12%),
+        radial-gradient(ellipse at 40% 75%, rgba(120, 45, 35, 0.6) 0%, transparent 10%);
+}
+
+.planet-image.mars::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.15) 0%, transparent 45%);
+}
+
+/* Jupiter - Massive gas giant with bands and Great Red Spot */
 .planet-image.jupiter {
-    background: radial-gradient(circle at 30% 30%, #f4d29c, #8b6c42);
+    background:
+        radial-gradient(circle at 35% 30%, #f9e4bc, #f4d29c 25%, #d4a373 45%, #b8915f 65%, #8b6c42);
+    box-shadow:
+        inset -35px -35px 70px rgba(100, 70, 40, 0.7),
+        inset 25px 25px 50px rgba(250, 230, 190, 0.3),
+        0 0 70px rgba(212, 163, 115, 0.6),
+        0 25px 80px rgba(0, 0, 0, 0.5);
 }
 
+.planet-image.jupiter::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        linear-gradient(0deg, transparent 0%, rgba(160, 120, 80, 0.5) 12%, rgba(140, 100, 60, 0.3) 14%, transparent 16%),
+        linear-gradient(0deg, transparent 24%, rgba(180, 140, 90, 0.6) 29%, rgba(160, 120, 80, 0.4) 31%, transparent 33%),
+        linear-gradient(0deg, transparent 38%, rgba(150, 110, 70, 0.5) 43%, rgba(130, 90, 60, 0.3) 45%, transparent 47%),
+        linear-gradient(0deg, transparent 54%, rgba(170, 130, 85, 0.6) 59%, rgba(150, 110, 75, 0.4) 61%, transparent 63%),
+        linear-gradient(0deg, transparent 70%, rgba(160, 120, 80, 0.5) 75%, rgba(140, 100, 65, 0.3) 77%, transparent 79%);
+}
+
+.planet-image.jupiter::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 28px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, #e85d44, #c94632 60%, #a83a2a);
+    top: 38%;
+    right: 22%;
+    box-shadow:
+        inset -8px -8px 15px rgba(0, 0, 0, 0.6),
+        inset 4px 4px 10px rgba(255, 120, 100, 0.3);
+    animation: stormPulse 8s ease-in-out infinite;
+}
+
+@keyframes stormPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Saturn - Beautiful ringed planet with 3D ring system */
 .planet-image.saturn {
-    background: radial-gradient(circle at 30% 30%, #f4d7a7, #a89570);
+    background:
+        radial-gradient(circle at 38% 32%, #fffcf0, #f9edc7 20%, #f4d7a7 40%, #d4bc8f 65%, #a89570);
+    box-shadow:
+        inset -28px -28px 55px rgba(150, 120, 80, 0.6),
+        inset 20px 20px 45px rgba(255, 250, 230, 0.3),
+        0 0 60px rgba(244, 215, 167, 0.6),
+        0 22px 70px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: visible;
 }
 
+.planet-image.saturn::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 45%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(75deg);
+    background:
+        radial-gradient(ellipse at center,
+            transparent 35%,
+            rgba(180, 150, 100, 0.2) 37%,
+            rgba(220, 190, 140, 0.5) 40%,
+            rgba(244, 215, 167, 0.8) 44%,
+            rgba(199, 168, 112, 0.95) 48%,
+            rgba(180, 150, 100, 0.9) 50%,
+            rgba(199, 168, 112, 0.95) 52%,
+            rgba(244, 215, 167, 0.85) 56%,
+            rgba(220, 190, 140, 0.6) 60%,
+            rgba(199, 168, 112, 0.4) 64%,
+            rgba(180, 150, 100, 0.25) 67%,
+            transparent 70%);
+    border-radius: 50%;
+    z-index: 10;
+    pointer-events: none;
+    box-shadow:
+        0 0 30px rgba(199, 168, 112, 0.6),
+        inset 0 -5px 15px rgba(0, 0, 0, 0.4);
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.planet-image.saturn::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 15%;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(12px);
+}
+
+/* Uranus - Pale cyan ice giant with subtle features */
 .planet-image.uranus {
-    background: radial-gradient(circle at 30% 30%, #a5d6d1, #5a8a8a);
+    background:
+        radial-gradient(circle at 38% 32%, #d9f5f2, #c5f0ed 22%, #a5d6d1 42%, #7cb5b0 66%, #5a8a8a);
+    box-shadow:
+        inset -28px -28px 55px rgba(60, 100, 100, 0.6),
+        inset 22px 22px 45px rgba(220, 245, 240, 0.3),
+        0 0 65px rgba(165, 214, 209, 0.6),
+        0 22px 70px rgba(0, 0, 0, 0.5);
+    animation: planetRotate 25s linear infinite;
 }
 
+.planet-image.uranus::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        radial-gradient(ellipse at 30% 25%, rgba(255, 255, 255, 0.35) 0%, transparent 30%),
+        linear-gradient(92deg, transparent 46%, rgba(100, 150, 145, 0.4) 49%, rgba(80, 130, 125, 0.3) 51%, transparent 54%),
+        radial-gradient(ellipse at 55% 60%, rgba(120, 170, 165, 0.25) 0%, transparent 25%);
+}
+
+.planet-image.uranus::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.2) 0%, transparent 40%);
+}
+
+/* Neptune - Deep blue with dynamic storms */
 .planet-image.neptune {
-    background: radial-gradient(circle at 30% 30%, #6b9ddc, #1a3a5a);
+    background:
+        radial-gradient(circle at 36% 30%, #8eb8e5, #6b9ddc 24%, #4a7ba7 44%, #2d5a7f 66%, #1a3a5a);
+    box-shadow:
+        inset -32px -32px 65px rgba(20, 40, 70, 0.8),
+        inset 24px 24px 48px rgba(140, 180, 220, 0.25),
+        0 0 70px rgba(74, 123, 167, 0.7),
+        0 24px 75px rgba(0, 0, 0, 0.6);
 }
 
-/* Text & Buttons */
+.planet-image.neptune::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        radial-gradient(ellipse at 28% 22%, rgba(255, 255, 255, 0.25) 0%, transparent 26%),
+        radial-gradient(ellipse at 62% 48%, rgba(100, 140, 180, 0.35) 0%, transparent 32%),
+        radial-gradient(circle at 70% 35%, rgba(120, 160, 200, 0.3) 0%, transparent 18%),
+        radial-gradient(ellipse at 35% 68%, rgba(80, 120, 160, 0.3) 0%, transparent 22%);
+}
+
+.planet-image.neptune::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(200, 230, 255, 0.3) 60%, transparent);
+    top: 52%;
+    left: 32%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    animation: stormMove 15s ease-in-out infinite;
+}
+
+@keyframes stormMove {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translate(12px, -6px);
+        opacity: 1;
+    }
+}
+
+/* 145,
+0.3) 50%,
+transparent 52%);
+} */
+
+/* Neptune - Deep blue ice giant */
+.planet-image.neptune {
+    background: radial-gradient(circle at 35% 30%, #6b9ddc, #4a7ba7 40%, #2d5a7f 70%, #1a3a5a);
+    box-shadow:
+        inset -25px -25px 50px rgba(20, 40, 70, 0.5),
+        0 0 40px rgba(74, 123, 167, 0.5);
+}
+
+.planet-image.neptune::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        radial-gradient(ellipse at 30% 25%, rgba(255, 255, 255, 0.2) 0%, transparent 25%),
+        radial-gradient(ellipse at 60% 50%, rgba(100, 140, 180, 0.3) 0%, transparent 30%),
+        radial-gradient(circle at 40% 60%, rgba(70, 110, 150, 0.4) 0%, transparent 15%);
+}
+
+.planet-image.neptune::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+    top: 55%;
+    left: 35%;
+    animation: stormMove 15s ease-in-out infinite;
+}
+
+@keyframes stormMove {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(10px, -5px);
+    }
+}
+
 .planet-number {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(74, 144, 226, 0.2);
+    border: 1px solid var(--earth-blue);
     color: var(--earth-blue);
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
 .planet-name {
-    font-size: 28px;
-    margin-bottom: 5px;
     font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    margin-bottom: 8px;
 }
 
 .planet-tagline {
-    color: #aaa;
+    color: var(--text-secondary);
     font-size: 14px;
     margin-bottom: 20px;
-    font-style: italic;
 }
 
 .planet-stats {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.stat {
+    text-align: left;
 }
 
 .stat-label {
     display: block;
-    font-size: 10px;
+    color: var(--text-secondary);
+    font-size: 11px;
     text-transform: uppercase;
-    color: #888;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
 }
 
 .stat-value {
+    font-family: 'Orbitron', sans-serif;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .btn-explore {
     width: 100%;
     padding: 12px;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
     text-transform: uppercase;
-    font-weight: bold;
+    letter-spacing: 1px;
     cursor: pointer;
-    margin-top: auto;
-    /* Pushes button to bottom */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
 }
 
-/* ========================================
-   !!! MOBILE NUCLEAR FIX !!! 
-   ======================================== */
-@media screen and (max-width: 768px) {
+.btn-explore:hover {
+    background: var(--earth-blue);
+    border-color: var(--earth-blue);
+}
 
-    /* 1. Force the container to stack vertically */
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.planets-grid {
+    display: grid;
+    /* 8 planets in one row */
+    grid-template-columns: repeat(8, calc(33.33% - 20px));
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 20px 5px;
+}
+
+/* Hide Scrollbar */
+.planets-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.planet-card {
+    scroll-snap-align: start;
+    min-width: 100%;
+    /* Default for mobile */
+}
+
+/* Navigation Buttons Styling */
+.slider-btn {
+    background: rgba(74, 144, 226, 0.1);
+    border: 1px solid var(--earth-blue);
+    color: var(--earth-blue);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    background: var(--earth-blue);
+    color: white;
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+}
+
+/* Responsive: 3 planets visible on Desktop */
+@media (min-width: 1024px) {
     .planets-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important;
-        width: 100% !important;
-        padding-bottom: 50px;
+        grid-template-columns: repeat(8, calc(33.33% - 20px));
+    }
+}
+
+
+/* Planet Detail Modal Styles */
+.planet-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.planet-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.modal-content-expanded {
+    position: relative;
+    z-index: 10000;
+    background: linear-gradient(135deg, #1a1f3a 0%, #16213e 50%, #0f3460 100%);
+    border: 1px solid rgba(74, 144, 226, 0.3);
+    border-radius: 20px;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8),
+        0 0 60px rgba(74, 144, 226, 0.4);
+    animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
     }
 
-    /* 2. Force the card to take full width */
-    .planet-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        margin: 0 !important;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(74, 144, 226, 0.2);
+    border: 1px solid rgba(74, 144, 226, 0.5);
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background: rgba(74, 144, 226, 0.4);
+    border-color: rgba(74, 144, 226, 0.8);
+    transform: rotate(90deg);
+}
+
+.planet-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.planet-visual {
+    flex-shrink: 0;
+}
+
+.planet-display {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: planetRotate 20s linear infinite;
+    box-shadow: 0 0 50px rgba(74, 144, 226, 0.6);
+}
+
+.planet-title-section {
+    flex: 1;
+}
+
+.planet-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(74, 144, 226, 0.2);
+    border: 1px solid rgba(74, 144, 226, 0.5);
+    color: #4a90e2;
+    border-radius: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.planet-title-section h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    color: #fff;
+    margin: 0 0 8px 0;
+    text-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+}
+
+.planet-title-section p {
+    font-size: 18px;
+    color: #b8c5d6;
+    margin: 0;
+}
+
+.planet-modal-body {
+    padding: 40px;
+}
+
+.info-section {
+    margin-bottom: 40px;
+}
+
+.info-section h3,
+.facts-section h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: #4a90e2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.info-section p {
+    font-size: 16px;
+    color: #b8c5d6;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: rgba(74, 144, 226, 0.1);
+    border: 1px solid rgba(74, 144, 226, 0.2);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.stat-card:hover {
+    background: rgba(74, 144, 226, 0.15);
+    border-color: rgba(74, 144, 226, 0.4);
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.stat-title {
+    display: block;
+    font-size: 12px;
+    color: #8ba3c0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.stat-data {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: #4a90e2;
+    font-weight: 700;
+}
+
+.facts-section {
+    margin-bottom: 40px;
+}
+
+.facts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.facts-list li {
+    background: rgba(74, 144, 226, 0.08);
+    border-left: 3px solid #4a90e2;
+    padding: 12px 16px;
+    border-radius: 4px;
+    color: #b8c5d6;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.facts-list li:hover {
+    background: rgba(74, 144, 226, 0.15);
+    transform: translateX(5px);
+}
+
+.action-section {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4a90e2 0%, #2d5a8a 100%);
+    border: 1px solid rgba(74, 144, 226, 0.6);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 6px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5a9ff2 0%, #3d6a9a 100%);
+    box-shadow: 0 0 30px rgba(74, 144, 226, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Scrollbar styling */
+.modal-content-expanded::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content-expanded::-webkit-scrollbar-track {
+    background: rgba(74, 144, 226, 0.1);
+}
+
+.modal-content-expanded::-webkit-scrollbar-thumb {
+    background: rgba(74, 144, 226, 0.4);
+    border-radius: 4px;
+}
+
+.modal-content-expanded::-webkit-scrollbar-thumb:hover {
+    background: rgba(74, 144, 226, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-content-expanded {
+        width: 95%;
+        max-height: 95vh;
     }
 
-    /* 3. Adjust padding for small screens */
-    .explore-section {
-        padding: 100px 15px 20px !important;
+    .planet-modal-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .planet-title-section h1 {
+        font-size: 36px;
+    }
+
+    .planet-modal-body {
+        padding: 20px;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    .facts-list {
+        grid-template-columns: 1fr;
     }
 }
