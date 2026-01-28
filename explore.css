@@ -1,84 +1,76 @@
 /* ========================================
-   EXPLORE PAGE - FIXED LAYOUT
+   EXPLORE PAGE - RESPONSIVE FIX
    ======================================== */
 
+/* Base container settings */
 .explore-section {
     padding: 120px 20px 60px;
     min-height: 100vh;
-    background: transparent;
-    /* Ensures background shows through */
+    box-sizing: border-box;
 }
 
+/* DEFAULT (DESKTOP) LAYOUT 
+   Uses Grid to show multiple cards per row
+*/
 .planets-grid {
     display: grid;
-    /* KEY FIX: This creates columns that wrap automatically */
-    /* Mobile: 1 column. Desktop: Fits as many as possible */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    /* This automatically calculates how many columns fit. 
+       If the screen is wide, it shows 3 or 4. 
+       If narrow, it drops to 2 or 1. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     width: 100%;
-
-    /* RESET: Removes the horizontal slider behavior causing the issue */
-    overflow-x: visible !important;
-    scroll-snap-type: none !important;
-    padding: 0 !important;
+    margin: 0 auto;
 }
 
 /* Card Styling */
 .planet-card {
-    background: rgba(26, 26, 36, 0.8);
-    /* Darker, slightly transparent card */
-    backdrop-filter: blur(10px);
+    background: rgba(26, 31, 58, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px 20px;
-    border-radius: 16px;
-    text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-
-    /* Fix: Ensures card content stacks vertically */
+    padding: 30px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 450px;
-    /* Consistent height */
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    /* Ensure card has a minimum height so it doesn't look crushed */
+    min-height: 400px;
 }
 
 .planet-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     border-color: var(--earth-blue);
     box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
 }
 
 /* Featured Badge */
-.planet-card.featured {
-    border-color: var(--earth-blue);
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.08) 0%, rgba(26, 26, 36, 0.9) 100%);
-}
-
 .featured-badge {
     position: absolute;
     top: 15px;
     right: 15px;
     background: var(--earth-blue);
     color: white;
-    font-size: 10px;
-    font-weight: 700;
     padding: 4px 8px;
+    font-size: 10px;
+    font-weight: bold;
     border-radius: 4px;
     text-transform: uppercase;
 }
 
-/* Planet Image */
+/* Planet Images */
 .planet-image {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     flex-shrink: 0;
-    /* Prevents squashing */
-    animation: planetRotate 30s linear infinite;
+    /* Prevents image from getting squashed */
+    animation: rotate 20s linear infinite;
 }
 
-@keyframes planetRotate {
+@keyframes rotate {
     from {
         transform: rotate(0deg);
     }
@@ -88,82 +80,66 @@
     }
 }
 
-/* Planet Specific Colors */
+/* Planet Specific Colors (Backgrounds) */
 .planet-image.mercury {
     background: radial-gradient(circle at 30% 30%, #a8a8a8, #4a4a4a);
-    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .planet-image.venus {
     background: radial-gradient(circle at 30% 30%, #ffeaa7, #d4a373);
-    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .planet-image.earth {
     background: radial-gradient(circle at 30% 30%, #4a90e2, #0d1b3e);
-    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .planet-image.mars {
     background: radial-gradient(circle at 30% 30%, #ff7851, #8b3a2e);
-    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .planet-image.jupiter {
     background: radial-gradient(circle at 30% 30%, #f4d29c, #8b6c42);
-    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .planet-image.saturn {
     background: radial-gradient(circle at 30% 30%, #f4d7a7, #a89570);
-    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .planet-image.uranus {
     background: radial-gradient(circle at 30% 30%, #a5d6d1, #5a8a8a);
-    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .planet-image.neptune {
     background: radial-gradient(circle at 30% 30%, #6b9ddc, #1a3a5a);
-    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Typography */
+/* Text & Buttons */
 .planet-number {
     color: var(--earth-blue);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
 .planet-name {
-    color: white;
-    font-family: 'Orbitron', sans-serif;
     font-size: 28px;
     margin-bottom: 5px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .planet-tagline {
-    color: #888;
+    color: #aaa;
     font-size: 14px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-style: italic;
 }
 
-/* Stats Row */
 .planet-stats {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-top: 20px;
+    padding-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 25px;
-}
-
-.stat {
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 .stat-label {
@@ -171,55 +147,51 @@
     font-size: 10px;
     text-transform: uppercase;
     color: #888;
-    margin-bottom: 5px;
 }
 
 .stat-value {
-    font-family: 'Orbitron', sans-serif;
-    color: white;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-/* Button */
 .btn-explore {
     width: 100%;
+    padding: 12px;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
-    padding: 12px;
     text-transform: uppercase;
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
     margin-top: auto;
     /* Pushes button to bottom */
 }
 
-.btn-explore:hover {
-    background: var(--earth-blue);
-    border-color: var(--earth-blue);
-}
-
 /* ========================================
-   MOBILE & TABLET OVERRIDES
+   !!! MOBILE NUCLEAR FIX !!! 
    ======================================== */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+
+    /* 1. Force the container to stack vertically */
     .planets-grid {
-        /* FORCE single column on mobile */
-        grid-template-columns: 1fr !important;
-        gap: 20px;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        width: 100% !important;
+        padding-bottom: 50px;
     }
 
+    /* 2. Force the card to take full width */
     .planet-card {
-        flex-direction: column;
-        /* Ensure vertical stacking */
-        width: 100%;
-        min-height: auto;
-        /* Allow height to fit content */
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        margin: 0 !important;
     }
 
+    /* 3. Adjust padding for small screens */
     .explore-section {
-        padding: 100px 15px 40px;
+        padding: 100px 15px 20px !important;
     }
 }
