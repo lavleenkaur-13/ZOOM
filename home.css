@@ -1,9 +1,4 @@
-/* ========================================
-   home.css - RESPONSIVE VERSION
-   Optimized for Mobile, Tablet, Laptop, Desktop
-   ======================================== */
-
-/* Hero Section - Base Desktop Styles */
+/* Hero Section */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -54,7 +49,6 @@
     display: flex;
     gap: 20px;
     margin-bottom: 60px;
-    flex-wrap: wrap;
 }
 
 .btn-hero-primary,
@@ -70,7 +64,6 @@
     align-items: center;
     gap: 12px;
     transition: all 0.3s ease;
-    border: none;
 }
 
 .btn-hero-primary {
@@ -105,7 +98,6 @@
     width: 500px;
     height: 500px;
     position: relative;
-    flex-shrink: 0;
 }
 
 .planet-main {
@@ -154,874 +146,330 @@
     }
 }
 
-/* ========================================
-   RESPONSIVE BREAKPOINTS
-   ======================================== */
-
-/* Large Desktop (1440px+) */
-@media (min-width: 1440px) {
-    .hero-section {
-        padding: 120px 80px 60px;
-    }
-
-    .hero-title {
-        font-size: 72px;
-    }
-
-    .hero-subtitle {
-        font-size: 20px;
-    }
-
-    .hero-stats {
-        gap: 80px;
-    }
-
-    .hero-planet {
-        width: 550px;
-        height: 550px;
-    }
-
-    .planet-ring {
-        width: 650px;
-        height: 650px;
-    }
-}
-
-/* Desktop/Laptop (1024px - 1439px) */
-@media (max-width: 1439px) and (min-width: 1024px) {
-    .hero-section {
-        padding: 100px 50px 50px;
-    }
-
-    .hero-title {
-        font-size: 56px;
-    }
-
-    .hero-planet {
-        width: 450px;
-        height: 450px;
-    }
-
-    .planet-ring {
-        width: 550px;
-        height: 550px;
-    }
-
-    .hero-stats {
-        gap: 50px;
-    }
-}
-
-/* Tablet (768px - 1023px) */
-@media (max-width: 1023px) {
+@media (max-width: 968px) {
     .hero-section {
         flex-direction: column;
         text-align: center;
-        padding: 100px 40px 50px;
-        gap: 40px;
     }
 
     .hero-content {
         max-width: 100%;
     }
 
-    .hero-title {
-        font-size: 48px;
-    }
-
-    .hero-subtitle {
-        font-size: 17px;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .hero-buttons {
         justify-content: center;
     }
 
     .hero-stats {
         justify-content: center;
-        gap: 40px;
-    }
-
-    .hero-planet {
-        width: 350px;
-        height: 350px;
-        margin-top: 20px;
-    }
-
-    .planet-ring {
-        width: 450px;
-        height: 450px;
-    }
-}
-
-/* Mobile Landscape & Small Tablet (640px - 767px) */
-@media (max-width: 767px) {
-    .hero-section {
-        padding: 90px 30px 40px;
-        min-height: auto;
-    }
-
-    .hero-title {
-        font-size: 42px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-    }
-
-    .hero-badge {
-        font-size: 12px;
-        padding: 5px 14px;
-    }
-
-    .hero-buttons {
-        gap: 15px;
-    }
-
-    .btn-hero-primary,
-    .btn-hero-secondary {
-        padding: 14px 28px;
-        font-size: 14px;
-    }
-
-    .hero-stats {
-        gap: 30px;
-        flex-wrap: wrap;
-    }
-
-    .stat-value {
-        font-size: 28px;
-    }
-
-    .stat-label {
-        font-size: 12px;
     }
 
     .hero-planet {
         width: 300px;
         height: 300px;
+        margin-top: 60px;
     }
 
     .planet-ring {
-        width: 380px;
-        height: 380px;
+        width: 400px;
+        height: 400px;
     }
 }
 
-/* Mobile Portrait (480px - 639px) */
-@media (max-width: 639px) {
-    .hero-section {
-        padding: 80px 20px 30px;
-    }
-
+@media (max-width: 540px) {
     .hero-title {
-        font-size: 36px;
-        margin-bottom: 20px;
-    }
-
-    .hero-subtitle {
-        font-size: 15px;
-        margin-bottom: 30px;
-    }
-
-    .hero-badge {
-        margin-bottom: 20px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 50px;
-        width: 100%;
-    }
-
-    .btn-hero-primary,
-    .btn-hero-secondary {
-        width: 100%;
-        justify-content: center;
-        padding: 14px 24px;
-    }
-
-    .hero-stats {
-        gap: 25px;
-        width: 100%;
-    }
-
-    .stat-item {
-        flex: 1;
-    }
-
-    .stat-value {
-        font-size: 24px;
-    }
-
-    .stat-label {
-        font-size: 11px;
-    }
-
-    .hero-planet {
-        width: 260px;
-        height: 260px;
-        margin-top: 30px;
-    }
-
-    .planet-ring {
-        width: 340px;
-        height: 340px;
+        font-size: 42px;
     }
 }
 
-/* Small Mobile (320px - 479px) */
-@media (max-width: 479px) {
-    .hero-section {
-        padding: 70px 15px 25px;
-    }
 
-    .hero-title {
-        font-size: 32px;
-        line-height: 1.3;
-    }
 
-    .hero-subtitle {
-        font-size: 14px;
-        margin-bottom: 25px;
-    }
 
-    .hero-badge {
-        font-size: 11px;
-        padding: 4px 12px;
-        margin-bottom: 16px;
-    }
 
-    .hero-buttons {
-        margin-bottom: 40px;
-    }
 
-    .btn-hero-primary,
-    .btn-hero-secondary {
-        padding: 12px 20px;
-        font-size: 13px;
-        gap: 8px;
-    }
 
-    .hero-stats {
-        gap: 20px;
-        flex-direction: row;
-    }
 
-    .stat-value {
-        font-size: 22px;
-    }
 
-    .stat-label {
-        font-size: 10px;
-    }
 
-    .hero-planet {
-        width: 220px;
-        height: 220px;
-        margin-top: 25px;
-    }
 
-    .planet-ring {
-        width: 290px;
-        height: 290px;
-    }
-}
 
-/* Extra Small Mobile (320px and below) */
-@media (max-width: 350px) {
-    .hero-title {
-        font-size: 28px;
-    }
 
-    .hero-subtitle {
-        font-size: 13px;
-    }
 
-    .hero-planet {
-        width: 200px;
-        height: 200px;
-    }
 
-    .planet-ring {
-        width: 260px;
-        height: 260px;
-    }
-
-    .hero-stats {
-        gap: 15px;
-    }
-
-    .stat-value {
-        font-size: 20px;
-    }
-}
-
-/* Landscape Mobile Orientation */
-@media (max-height: 500px) and (orientation: landscape) {
-    .hero-section {
-        min-height: auto;
-        padding: 90px 30px 30px;
-    }
-
-    .hero-planet {
-        display: none;
-    }
-
-    .hero-buttons {
-        flex-direction: row;
-        margin-bottom: 30px;
-    }
-}
-
-/* Touch Device Optimizations */
-@media (hover: none) and (pointer: coarse) {
-
-    .btn-hero-primary,
-    .btn-hero-secondary {
-        min-height: 48px;
-        /* Better touch targets */
-    }
-
-    .btn-hero-primary:active {
-        transform: scale(0.98);
-    }
-
-    .btn-hero-secondary:active {
-        transform: scale(0.98);
-    }
-}
-
-/* Print Styles */
-@media print {
-    .hero-section {
-        padding: 20px;
-        min-height: auto;
-    }
-
-    .hero-planet {
-        display: none;
-    }
-
-    .hero-buttons {
-        display: none;
-    }
-}
-
-/* ========================================
-   home.css - RESPONSIVE VERSION
-   Optimized for Mobile, Tablet, Laptop, Desktop
-   ======================================== */
-
-/* Hero Section - Base Desktop Styles */
-.hero-section {
-    min-height: 100vh;
-    display: flex;
+/* --- MODAL BASE STYLING --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    display: none;
+    /* Controlled by 'active' class in JS */
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    padding: 100px 60px 50px;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #0a0f1e;
+    width: 95%;
+    max-width: 1000px;
+    /* Wider for landscape */
+    min-height: 550px;
+    display: flex;
+    /* Side-by-side layout */
     position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* --- LEFT SIDEBAR (Planet & Title) --- */
+.modal-content>.planet-decoration,
+.modal-content>.form-header {
+    /* We group these conceptually to the left */
+}
+
+/* Re-organizing the layout specifically */
+.modal-content {
+    flex-direction: row;
+}
+
+/* Side Panel Styling */
+.form-header {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.planet-decoration {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.planet {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.earth {
+    background: radial-gradient(circle at 30% 30%, #4a90e2, #1e3a8a);
+    box-shadow: 0 0 40px rgba(74, 144, 226, 0.4);
+}
+
+.mars {
+    background: radial-gradient(circle at 30% 30%, #e74c3c, #8b0000);
+    box-shadow: 0 0 40px rgba(231, 76, 60, 0.4);
+}
+
+/* --- RIGHT SIDE (The Form) --- */
+.auth-form {
+    flex: 1.5;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #0d1224;
     z-index: 1;
 }
 
-.hero-content {
-    max-width: 600px;
-}
-
-.hero-badge {
-    display: inline-block;
-    padding: 6px 16px;
-    background: rgba(74, 144, 226, 0.2);
-    border: 1px solid var(--earth-blue);
-    color: var(--earth-blue);
+.auth-form h2 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 24px;
+    font-size: 28px;
+    margin-bottom: 10px;
     letter-spacing: 2px;
 }
 
-.hero-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 64px;
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 24px;
+.form-divider {
+    width: 50px;
+    height: 4px;
+    background: var(--earth-blue, #4a90e2);
+    margin-bottom: 30px;
 }
 
-.hero-title .highlight {
-    color: var(--earth-blue);
-}
-
-.hero-subtitle {
-    font-size: 18px;
-    color: var(--text-secondary);
-    margin-bottom: 40px;
-    line-height: 1.6;
-}
-
-.hero-buttons {
-    display: flex;
+/* Form Grid for Register */
+#registerFormElement {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin-bottom: 60px;
-    flex-wrap: wrap;
 }
 
-.btn-hero-primary,
-.btn-hero-secondary {
-    padding: 16px 32px;
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
+#registerFormElement h2,
+#registerFormElement .form-divider,
+#registerFormElement .terms,
+#registerFormElement .btn-primary,
+#registerFormElement .switch-section {
+    grid-column: span 2;
+}
+
+/* --- INPUT STYLING --- */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
     text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
     letter-spacing: 1px;
-    cursor: pointer;
+}
+
+.input-wrapper {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 12px;
-    transition: all 0.3s ease;
-    border: none;
 }
 
-.btn-hero-primary {
-    background: var(--earth-blue);
-    border: 1px solid var(--earth-blue);
-    color: white;
-}
-
-.btn-hero-primary:hover {
-    background: #6bb6ff;
-    border-color: #6bb6ff;
-    transform: translateY(-2px);
-}
-
-.btn-hero-secondary {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text-primary);
-}
-
-.btn-hero-secondary:hover {
-    border-color: var(--earth-blue);
-    color: var(--earth-blue);
-}
-
-.hero-stats {
-    display: flex;
-    gap: 60px;
-}
-
-.hero-planet {
-    width: 500px;
-    height: 500px;
-    position: relative;
-    flex-shrink: 0;
-}
-
-.planet-main {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%, #87CEEB, #4a90e2 35%, #1e3a8a 70%, #0d1b3e);
-    box-shadow:
-        inset -30px -30px 60px rgba(0, 0, 0, 0.5),
-        0 0 100px rgba(74, 144, 226, 0.6);
-    animation: floatPlanet 8s ease-in-out infinite;
-    position: relative;
-}
-
-@keyframes floatPlanet {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-30px) rotate(10deg);
-    }
-}
-
-.planet-ring {
+.input-icon {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    border: 1px dashed rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    animation: rotate 30s linear infinite;
+    left: 15px;
+    color: #4a90e2;
 }
 
-@keyframes rotate {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: 0.3s;
 }
 
-/* ========================================
-   RESPONSIVE BREAKPOINTS
-   ======================================== */
-
-/* Large Desktop (1440px+) */
-@media (min-width: 1440px) {
-    .hero-section {
-        padding: 120px 80px 60px;
-    }
-
-    .hero-title {
-        font-size: 72px;
-    }
-
-    .hero-subtitle {
-        font-size: 20px;
-    }
-
-    .hero-stats {
-        gap: 80px;
-    }
-
-    .hero-planet {
-        width: 550px;
-        height: 550px;
-    }
-
-    .planet-ring {
-        width: 650px;
-        height: 650px;
-    }
+.input-wrapper input:focus {
+    border-color: #4a90e2;
+    background: rgba(255, 255, 255, 0.08);
 }
 
-/* Desktop/Laptop (1024px - 1439px) */
-@media (max-width: 1439px) and (min-width: 1024px) {
-    .hero-section {
-        padding: 100px 50px 50px;
-    }
-
-    .hero-title {
-        font-size: 56px;
-    }
-
-    .hero-planet {
-        width: 450px;
-        height: 450px;
-    }
-
-    .planet-ring {
-        width: 550px;
-        height: 550px;
-    }
-
-    .hero-stats {
-        gap: 50px;
-    }
+/* --- BUTTONS & EXTRAS --- */
+.btn-primary {
+    padding: 15px;
+    background: #4a90e2;
+    border: none;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
 }
 
-/* Tablet (768px - 1023px) */
-@media (max-width: 1023px) {
-    .hero-section {
+.mars-btn {
+    background: #e74c3c;
+}
+
+.mars-color {
+    color: #e74c3c;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.switch-section {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.link-text {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+/* --- TECH CORNERS (Decoration) --- */
+.tech-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(74, 144, 226, 0.3);
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+    border-right: none;
+    border-top: none;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 850px) {
+    .modal-content {
         flex-direction: column;
-        text-align: center;
-        padding: 100px 40px 50px;
-        gap: 40px;
+        max-width: 450px;
+        height: 90vh;
+        overflow-y: auto;
     }
 
-    .hero-content {
-        max-width: 100%;
+    .form-header {
+        padding: 30px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .hero-title {
-        font-size: 48px;
+    #registerFormElement {
+        grid-template-columns: 1fr;
     }
 
-    .hero-subtitle {
-        font-size: 17px;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+    #registerFormElement * {
+        grid-column: span 1;
     }
 
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-stats {
-        justify-content: center;
-        gap: 40px;
-    }
-
-    .hero-planet {
-        width: 350px;
-        height: 350px;
-        margin-top: 20px;
-    }
-
-    .planet-ring {
-        width: 450px;
-        height: 450px;
-    }
-}
-
-/* Mobile Landscape & Small Tablet (640px - 767px) */
-@media (max-width: 767px) {
-    .hero-section {
-        padding: 90px 30px 40px;
-        min-height: auto;
-    }
-
-    .hero-title {
-        font-size: 42px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-    }
-
-    .hero-badge {
-        font-size: 12px;
-        padding: 5px 14px;
-    }
-
-    .hero-buttons {
-        gap: 15px;
-    }
-
-    .btn-hero-primary,
-    .btn-hero-secondary {
-        padding: 14px 28px;
-        font-size: 14px;
-    }
-
-    .hero-stats {
-        gap: 30px;
-        flex-wrap: wrap;
-    }
-
-    .stat-value {
-        font-size: 28px;
-    }
-
-    .stat-label {
-        font-size: 12px;
-    }
-
-    .hero-planet {
-        width: 300px;
-        height: 300px;
-    }
-
-    .planet-ring {
-        width: 380px;
-        height: 380px;
-    }
-}
-
-/* Mobile Portrait (480px - 639px) */
-@media (max-width: 639px) {
-    .hero-section {
-        padding: 80px 20px 30px;
-    }
-
-    .hero-title {
-        font-size: 36px;
-        margin-bottom: 20px;
-    }
-
-    .hero-subtitle {
-        font-size: 15px;
-        margin-bottom: 30px;
-    }
-
-    .hero-badge {
-        margin-bottom: 20px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 50px;
-        width: 100%;
-    }
-
-    .btn-hero-primary,
-    .btn-hero-secondary {
-        width: 100%;
-        justify-content: center;
-        padding: 14px 24px;
-    }
-
-    .hero-stats {
-        gap: 25px;
-        width: 100%;
-    }
-
-    .stat-item {
-        flex: 1;
-    }
-
-    .stat-value {
-        font-size: 24px;
-    }
-
-    .stat-label {
-        font-size: 11px;
-    }
-
-    .hero-planet {
-        width: 260px;
-        height: 260px;
-        margin-top: 30px;
-    }
-
-    .planet-ring {
-        width: 340px;
-        height: 340px;
-    }
-}
-
-/* Small Mobile (320px - 479px) */
-@media (max-width: 479px) {
-    .hero-section {
-        padding: 70px 15px 25px;
-    }
-
-    .hero-title {
-        font-size: 32px;
-        line-height: 1.3;
-    }
-
-    .hero-subtitle {
-        font-size: 14px;
-        margin-bottom: 25px;
-    }
-
-    .hero-badge {
-        font-size: 11px;
-        padding: 4px 12px;
-        margin-bottom: 16px;
-    }
-
-    .hero-buttons {
-        margin-bottom: 40px;
-    }
-
-    .btn-hero-primary,
-    .btn-hero-secondary {
-        padding: 12px 20px;
-        font-size: 13px;
-        gap: 8px;
-    }
-
-    .hero-stats {
-        gap: 20px;
-        flex-direction: row;
-    }
-
-    .stat-value {
-        font-size: 22px;
-    }
-
-    .stat-label {
-        font-size: 10px;
-    }
-
-    .hero-planet {
-        width: 220px;
-        height: 220px;
-        margin-top: 25px;
-    }
-
-    .planet-ring {
-        width: 290px;
-        height: 290px;
-    }
-}
-
-/* Extra Small Mobile (320px and below) */
-@media (max-width: 350px) {
-    .hero-title {
-        font-size: 28px;
-    }
-
-    .hero-subtitle {
-        font-size: 13px;
-    }
-
-    .hero-planet {
-        width: 200px;
-        height: 200px;
-    }
-
-    .planet-ring {
-        width: 260px;
-        height: 260px;
-    }
-
-    .hero-stats {
-        gap: 15px;
-    }
-
-    .stat-value {
-        font-size: 20px;
-    }
-}
-
-/* Landscape Mobile Orientation */
-@media (max-height: 500px) and (orientation: landscape) {
-    .hero-section {
-        min-height: auto;
-        padding: 90px 30px 30px;
-    }
-
-    .hero-planet {
+    .planet-decoration {
         display: none;
-    }
-
-    .hero-buttons {
-        flex-direction: row;
-        margin-bottom: 30px;
-    }
-}
-
-/* Touch Device Optimizations */
-@media (hover: none) and (pointer: coarse) {
-
-    .btn-hero-primary,
-    .btn-hero-secondary {
-        min-height: 48px;
-        /* Better touch targets */
-    }
-
-    .btn-hero-primary:active {
-        transform: scale(0.98);
-    }
-
-    .btn-hero-secondary:active {
-        transform: scale(0.98);
-    }
-}
-
-/* Print Styles */
-@media print {
-    .hero-section {
-        padding: 20px;
-        min-height: auto;
-    }
-
-    .hero-planet {
-        display: none;
-    }
-
-    .hero-buttons {
-        display: none;
+        /* Hide floating planet on small mobile screens */
     }
 }
